@@ -6,17 +6,16 @@ import { cors } from "hono/cors"; // <--- New import
 // Initialize the Hono app
 const app = new Hono();
 
-// Configure CORS to allow all origins (Allowed to all origins)
 app.use(
     cors({
         origin: "*", // Allows all origins
-        allowHeaders: ["X-Custom-Header", "Upgrade-Insecure-Requests"],
+        // FIX: Added "Content-Type" to allow the client to send data in the request body
+        allowHeaders: ["X-Custom-Header", "Upgrade-Insecure-Requests", "Content-Type"], 
         allowMethods: ["POST", "GET", "OPTIONS"],
         exposeHeaders: ["Content-Length"],
         maxAge: 600,
     })
 );
-
 // Initialize the aniwatch client
 const client = new HiAnime.Scraper();
 
