@@ -1,0 +1,15 @@
+{
+  "name": "aniwatch-api-minimal",
+  "version": "1.0.0",
+  "description": "Minimal server for aniwatch-api based on user request.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.2",
+    "aniwatch": "^2.24.3",
+    "hono": "^4.7.10"
+  }
+}
